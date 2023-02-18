@@ -1,0 +1,24 @@
+{
+	"name": "Vue (Community)",
+	"build": {
+		"dockerfile": "Dockerfile",
+		"context": ".."
+	},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"dbaeumer.vscode-eslint",
+				"Vue.volar"
+			],
+			"settings": {
+				"terminal.integrated.defaultProfile.linux": "zsh"
+			}
+		}
+	},
+	"shutdownAction": "stopContainer",
+	"forwardPorts": [
+		8000,
+		8080
+	],
+	"remoteUser": "node"
+}
