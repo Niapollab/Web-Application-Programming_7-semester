@@ -1,15 +1,23 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <h1>Rating 1:</h1>
+  <StarRating @rating-changed="onRatingChanged" id="rating__1"></StarRating>
+  <h1>Rating 2:</h1>
+  <StarRating :stars-count=10 @rating-changed="onRatingChanged" id="rating__2"></StarRating>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import StarRating from './components/StarRating.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    StarRating
+  },
+  methods: {
+    onRatingChanged(sender) {
+      alert(`Rating: ${sender.$attrs.id}; Value: ${sender.ratingValue}`);
+    }
   }
 }
 </script>
